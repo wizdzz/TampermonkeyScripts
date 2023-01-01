@@ -70,7 +70,7 @@ function addClickListener(ele) {
 function changePreNextQuestionBtn(){
     let currentQIndex = favoriteQuestions.indexOf(currentQuestionId);
 
-    if (favoriteQuestions.length > 1 && favoriteQuestions.includes(currentQuestionId)) {
+    if (favoriteQuestions.length > 0 && favoriteQuestions.includes(currentQuestionId)) {
         let lastTr = document.querySelector('main table tbody tr:nth-last-child(1)');
         let allAnchor = lastTr.querySelectorAll('a');
 
