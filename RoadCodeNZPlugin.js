@@ -121,10 +121,14 @@ function addFavoriteQuestionH1(){
     let h1 = document.createElement('h1');
     h1.innerText = 'Favorite Question Mode';
 
+    let p = document.createElement('p');
+    p.innerText = `${favoriteQuestions.indexOf(currentQuestionId) + 1}/${favoriteQuestions.length}`;
+
     let div = document.createElement('div');
     div.appendChild(h1);
     div.style.textAlign = 'center';
     div.style.marginBottom = '2em';
+    div.appendChild(p);
 
     let container = document.querySelector('main').parentNode;
     container.insertBefore(div, container.firstElementChild);
@@ -142,7 +146,7 @@ function addFavoriteQuestionH1(){
         let ele = createAddFavoriteEle();
         addClickListener(ele);
 
-        if(favoriteQuestionMode) {
+        if(favoriteQuestionMode && favoriteQuestions.includes(currentQuestionId)) {
             changePreNextQuestionBtn();
             addFavoriteQuestionH1();
         }
